@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+     <record model="ir.module.category" id="multi_companies_category">
+      <field name="name">Multi Companies Access</field>
+      <field name="description">User access Multi Companies</field>
+      <field name="sequence">3</field>
+    </record>
+<record id="multi_companies_manager" model="res.groups">
+      <field name="name">Multi Companies Manager</field>
+      <field name="category_id" ref="multi_companies_category"/>
+     <field eval="[(4,ref('base.group_erp_manager'))]" name="implied_ids"/>
+    </record>
+
+</data>
+</odoo>

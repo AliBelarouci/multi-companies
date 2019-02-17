@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Employee View -->
+    <record id="salaire_company_view_form" model="ir.ui.view">
+        <field name="name">salaire.company.view.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+         <xpath expr="/form/*" position="before">
+          <!--   <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active"/>
+                        </button>
+                    </div>-->
+    <header>
+        <button  string="Active" name="Active_company" type="object" class="oe_highlight"/>
+    </header>
+</xpath>
+             <xpath expr="//page[1]/group/group" position="after">
+                 <group>
+                     <field name="numSS"/>
+                     <field name="dateAff"/>
+                     <field name="caisseCnas"/>
+                     <field name="centre"/>
+                     <field name="dec_cnas"/>
+                     <field name="dec_g29"/>
+                 </group>
+             </xpath>
+        </field>
+    </record>
+</odoo>

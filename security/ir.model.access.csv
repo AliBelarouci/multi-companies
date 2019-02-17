@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_multi-companies_multi-companies,multi-companies.multi-companies,model_multi-companies_multi-companies,,1,0,0,0
+access_res-company,res.company,model_res_company,multi-companies-group,1,1,1,1

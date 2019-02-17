@@ -24,7 +24,11 @@
 
     # always loaded
     'data': [
-         'security/rules.xml',
+
+         'security/groups.xml',
+         # 'security/ir.model.access.csv',
+
+        'views/res.company.xml',
          'views/views.xml',
         'views/templates.xml',
     ],
