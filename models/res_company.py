@@ -8,6 +8,7 @@ class ResCompny(models.Model):
     numSS = fields.Char(string="Num Sécurité Sociale", required=True, )
     nom = fields.Char(string="Raison sociale", required=True, )
     gerant = fields.Char(string="Gerant", required=True, )
+
     dateAff = fields.Char(string="Date Affiliation", required=True, )
     caisseCnas = fields.Selection([
         ('cnas39', 'Agence Cnas Eloued'),

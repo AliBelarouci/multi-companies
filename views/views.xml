@@ -56,26 +56,7 @@
     <menuitem name="Server to list" id="multi-companies" parent="multi-companies.menu_2"
               action="multi-companies.action_server"/>
     -->
-      <record id="companies__form" model="ir.ui.view">
-          <field name="name">.form</field>
-          <field name="model">res.company</field>
-          <field name="arch" type="xml">
-              <form string="">
-                  <header>
 
-                  </header>
-                  <sheet string="">
-                      <field name="name" />
-               <field name="gerant" />
-               <field name="caisseCnas" />
-               <field name="centre" />
-               <field name="dec_cnas" />
-               <field name="dec_g29" />
-                  </sheet>
-
-              </form>
-          </field>
-      </record>
    <record id="companies_tree" model="ir.ui.view">
        <field name="name">companies.tree</field>
        <field name="model">res.company</field>
@@ -92,11 +73,11 @@
        </field>
    </record>
       <record id="res-companies_action" model="ir.actions.act_window">
-          <field name="name">.action</field>
+          <field name="name">Companies List </field>
           <field name="res_model">res.company</field>
           <field name="view_type">form</field>
           <field name="view_mode">tree,form</field>
-          <field name="target">new</field>
+          <!--<field name="target">new</field>-->
           <field name="help" type="html">
             <p class="oe_view_nocontent_create">
 
