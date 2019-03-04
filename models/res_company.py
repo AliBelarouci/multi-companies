@@ -10,6 +10,10 @@ class ResCompny(models.Model):
     gerant = fields.Char(string="Gerant", required=True, )
 
     dateAff = fields.Char(string="Date Affiliation", required=True, )
+    raison = fields.Selection([
+        ('raison1', 'raison1'),
+        ('raison2', 'raison2'),
+    ], string='Raison sociale', default='raison1')
     caisseCnas = fields.Selection([
         ('cnas39', 'Agence Cnas Eloued'),
         ('cnas30', 'Agence Cnas Ouargla'),
@@ -19,6 +23,7 @@ class ResCompny(models.Model):
         ('ctr30', 'Ouargla'),
     ], string='Centre', default='ctr39')
     dec_cnas = fields.Selection([
+        ('mens', 'Mensuelle'),
         ('tri', 'Trimestrielle'),
 
     ], string='Declaration Cnas', default='tri')
@@ -32,6 +37,26 @@ class ResCompny(models.Model):
             context = self._context
             current_uid = context.get('uid')
             user = self.env['res.users'].sudo().browse(current_uid).write({'company_id': id})
+class ResCompanyYearFisc(models.Model):
+    _name = 'year_fisc'
+    year = fields.Integer(string="Year Fiscal", required=False, )
+    active_year = fields.Boolean(string="Active",  )
+    def Active_yearFct(self):
+
+        for record in self.env['year_fisc'].search([]):
+            record.active_year=False
+        for record in self:
+            if record.active_year:
+                record.write({'active_year': True})
+            else:
+                record.write({'active_year': False})
+
+        return
+    # def getActive(self):
+    #     for record in self.env['year_fisc'].search([]):
+    #         if(record.active_year):
+    #             return record.year
+    #     return
 
 
 

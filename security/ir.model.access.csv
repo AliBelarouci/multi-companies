@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res-company,res.company,model_res_company,multi-companies-group,1,1,1,1
+access_res-company,res.company,model_res_company,multi_companies_manager,1,1,1,1
+access_year_fisc,year_fisc,model_year_fisc,multi_companies_manager,1,1,1,1

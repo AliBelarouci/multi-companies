@@ -86,8 +86,57 @@
             </p>
           </field>
       </record>
+      <record id="year_fisc_form" model="ir.ui.view">
+          <field name="name">year_fisc.form</field>
+          <field name="model">year_fisc</field>
+          <field name="arch" type="xml">
+              <form string="">
+                  <header>
+                      
+                  </header>
+                  <sheet  >
+                      <div class="oe_button_box" name="button_box">
+                        <button name="Active_yearFct" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active_year" widget="boolean_button"  options='{"terminology": { "string_true": "Activezzzz", "hover_true": "check all", "string_false": "False", "hover_false": "Clear all" }}'/>
+                        </button>
+                   <!--<button  string="Active"  widget="boolean_button"  options='{"true": "Active User", "false": "Inactive User"}'
+                            name="Active_year" type="object" class="oe_highlight" icon="fa-archive"/>-->
+                    </div>
+                       <div class="oe_title">
+                        <label for="year"  />
+                        <h1>
+                            <field name="year"/>
+                            <field name="active_year"/>
+                        </h1>
+                    </div>
+                  </sheet>
+                  
+              </form>
+          </field>
+      </record>
+      <record id="Years_Fiscal_tree" model="ir.ui.view">
+          <field name="name">Years_Fiscal.tree</field>
+          <field name="model">year_fisc</field>
+          <field name="arch" type="xml">
+              <tree string="">
+                  <field name="year" />
+                  <field name="active_year" />
+
+
+              </tree>
+          </field>
+      </record>
+      <record id="Years_Fiscal_action" model="ir.actions.act_window">
+          <field name="name">year_fisc.action</field>
+          <field name="res_model">year_fisc</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+      </record>
       <!--base.action_res_company_form-->
     <menuitem name="Companies Lis" id="list-companies"  sequence="0"
               action="res-companies_action"/>
+
+    <menuitem name="Years Fiscal" id="Years_Fiscal"  sequence="0"
+              action="Years_Fiscal_action"/>
   </data>
 </odoo>

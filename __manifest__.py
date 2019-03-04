@@ -26,7 +26,7 @@
     'data': [
 
          'security/groups.xml',
-         # 'security/ir.model.access.csv',
+          'security/ir.model.access.csv',
 
         'views/res.company.xml',
          'views/views.xml',
