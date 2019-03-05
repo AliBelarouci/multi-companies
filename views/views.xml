@@ -97,7 +97,8 @@
                   <sheet  >
                       <div class="oe_button_box" name="button_box">
                         <button name="Active_yearFct" type="object" class="oe_stat_button" icon="fa-archive">
-                            <field name="active_year" widget="boolean_button"  options='{"terminology": { "string_true": "Activezzzz", "hover_true": "check all", "string_false": "False", "hover_false": "Clear all" }}'/>
+                            <!--options='{"terminology": { "string_true": "Activezzzz", "hover_true": "check all", "string_false": "False", "hover_false": "Clear all" }}'-->
+                            <field name="active_year" widget="boolean_button"  />
                         </button>
                    <!--<button  string="Active"  widget="boolean_button"  options='{"true": "Active User", "false": "Inactive User"}'
                             name="Active_year" type="object" class="oe_highlight" icon="fa-archive"/>-->

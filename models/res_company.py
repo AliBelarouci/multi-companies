@@ -37,6 +37,13 @@ class ResCompny(models.Model):
             context = self._context
             current_uid = context.get('uid')
             user = self.env['res.users'].sudo().browse(current_uid).write({'company_id': id})
+    def GetCurrentCompany(self):
+        context = self._context
+        current_uid = context.get('uid')
+        self.env['res.users'].sudo().browse(current_uid)
+        return self.env['res.company'].search(['id','=','1'])
+
+        return
 class ResCompanyYearFisc(models.Model):
     _name = 'year_fisc'
     year = fields.Integer(string="Year Fiscal", required=False, )
@@ -46,17 +53,15 @@ class ResCompanyYearFisc(models.Model):
         for record in self.env['year_fisc'].search([]):
             record.active_year=False
         for record in self:
-            if record.active_year:
-                record.write({'active_year': True})
-            else:
-                record.write({'active_year': False})
+            record.write({'active_year': not record.active_year})
+
 
         return
-    # def getActive(self):
-    #     for record in self.env['year_fisc'].search([]):
-    #         if(record.active_year):
-    #             return record.year
-    #     return
+    def getActive(self):
+        for record in self.env['year_fisc'].search([]):
+            if(record.active_year):
+                return record.year
+        return
 
 
 
